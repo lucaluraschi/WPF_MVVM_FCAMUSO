@@ -4,7 +4,7 @@ namespace WPF_MVVM_FCAMUSO.Models
 {
     public interface IPersoneService
     {
-        IList<Persona> Persone { get; }
+        IList<Persona> Personaaa { get; }
     }
 
     internal class PersoneService

@@ -13,5 +13,16 @@ namespace WPF_MVVM_FCAMUSO
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var personeService = new Models.PersoneService();
+            var mainWindowViewModel = new ViewModels.MainWindowViewModel(personeService);
+            var mainWindows = new MainWindow(mainWindowViewModel);
+
+            //var mainWindows = new MainWindow(new Models.PersoneService());
+            mainWindows.Show();
+        }
     }
 }

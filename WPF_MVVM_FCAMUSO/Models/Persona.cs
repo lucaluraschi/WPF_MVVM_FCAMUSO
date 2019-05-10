@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_MVVM_FCAMUSO.Models
 {
-    class Persona
+    public class Persona
     {
         public string Nome { get; set; }
         public string Cognome { get; set; }

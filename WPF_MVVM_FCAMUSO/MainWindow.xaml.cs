@@ -22,14 +22,12 @@ namespace WPF_MVVM_FCAMUSO
     public partial class MainWindow : Window
     {
 
-        private Models.IPersoneService  personeService = null;
+      
 
-        public MainWindow(Models.IPersoneService personeService)
+        public MainWindow(ViewModels.MainWindowViewModel vm)
         {
             InitializeComponent();
-            this.personeService = personeService;
-            cmbPersone.ItemsSource = personeService.Persone;
-            cmbPersone.DisplayMemberPath = "Cognome";
+            DataContext = vm;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,13 +37,15 @@ namespace WPF_MVVM_FCAMUSO
 
         private void salutaMi()
         {
-            if (cmbPersone.SelectedItem!=null)
-            {
-               var persona = (Models.Persona)cmbPersone.SelectedItem;
+            //if (cmbPersone.SelectedItem!=null)
+            //{
+            //   var persona = (Models.Persona)cmbPersone.SelectedItem;
 
-                txtSaluto.Text = $"Ciao {persona.Nome} {persona.Cognome}";
+            //    txtSaluto.Text = $"Ciao {persona.Nome} {persona.Cognome}";
 
-            }
+            //}
+
+            (DataContext as ViewModels.MainWindowViewModel).Saluta();
         }
     }
 }

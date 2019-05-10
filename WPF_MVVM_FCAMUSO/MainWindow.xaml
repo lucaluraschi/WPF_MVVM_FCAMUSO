@@ -9,11 +9,15 @@
     <StackPanel>
     <StackPanel Orientation="Horizontal" Margin="8">
         <TextBlock Text="Cognome"/>
-        <ComboBox x:Name="cmbPersone" x:FieldModifier="private" Width="120" Margin="8,0"/>
+        <ComboBox x:Name="cmbPersone" x:FieldModifier="private" Width="120" Margin="8,0"
+                  ItemsSource="{Binding Path=Persone}"
+                  DisplayMemberPath="Cognome"
+                  SelectedItem="{Binding Path=PersonaSelezionata}"/>
+                  
      <Button Click="Button_Click" >Salutami</Button>
     </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="8">
-            <TextBlock x:Name="txtSaluto" x:FieldModifier="private"/>
+            <TextBlock x:Name="txtSaluto" x:FieldModifier="private" Text="{Binding Path=TextSaluto}"/>
         </StackPanel>
     </StackPanel>
 </Window>
